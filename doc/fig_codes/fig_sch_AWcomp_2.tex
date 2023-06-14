@@ -1,0 +1,77 @@
+\documentclass{standalone}
+
+\input{macros_block.tex}
+
+\input{../localmacros}
+%\usepackage[framed]{../mcode}
+%\newcommand{\var}[1]{{\fontfamily{pcr}\selectfont#1}}
+\usepackage{amssymb,amsmath}
+\usepackage{mathrsfs,arydshln}
+\usepackage{bera}
+
+
+\begin{document}
+
+
+
+\begin{pspicture}[showgrid=false](0.5,2.8)(11.5,-1.8)
+
+    \psframe[linestyle=none,fillstyle=solid,fillcolor=teal!40](0.5,0.6)(7,2.8)
+    \rput[c](3.3,2.3){\parbox{2cm}{Nonlinear\\loop}}
+    \psframe[linestyle=none,fillstyle=solid,fillcolor=olive!40](7,0.6)(11.5,2.8)
+    \rput[c](9.3,2.5){\parbox{2cm}{\flushright Disturbance\\filter}}
+    \psframe[linestyle=none,fillstyle=solid,fillcolor=lime!40](0.5,0.6)(11.5,-1.8)
+    \rput[c](6.5,-1.4){Nominal closed-loop}
+
+    \psline{->}(1.0,0.2)(2.0,0.2)
+    \rput[c](1.2,0.35){$r$}
+%    \pscircle(1.0,0.0){0.2}
+%    \psline{->}(1.2,0.0)(2.0,0.0)
+%    \rput[c](1.6,0.2){$e$}
+    \rput(2.5,0){
+        \psframe(-0.5,-0.4)(0.5,0.4)
+        \rput[c](0,0){$K$}}
+    \psline{->}(3.0,0.0)(5.5,0.0)
+    \rput[c](3.6,0.2){$u$}
+    \rput(6.0,0){
+        \psframe(-0.5,-0.4)(0.5,0.4)
+        \rput[c](0,0){$G$}}
+    \psline{->}(6.5,0.0)(9.8,0.0)
+    \pscircle*(8.0,0.0){0.4mm}
+    \psline{->}(8.0,0.0)(8.0,-1.0)(1.5,-1.0)(1.5,-0.2)(2.0,-0.2)
+    \rput[c](8.0,0.3){$y_{lin}$}
+%    \rput[c](0.8,-0.4){\tiny$-$}
+
+    \pscircle*(4.2,0.0){0.4mm}
+    \psline{->}(4.2,0.0)(4.2,1.0)
+    \pscircle(4.2,1.2){0.2}
+    \psline{->}(4.4,1.2)(5.0,1.2)
+    \rput(5.5,1.2){
+        \psframe(-0.5,-0.4)(0.5,0.4)
+        \psline(-0.4,-0.3)(-0.2,0)(0.2,0)(0.4,0.3)}
+    \psline{->}(6.0,1.2)(7.0,1.2)(7.0,2.2)(6.3,2.2)
+    \rput[c](4.0,1.5){\tiny$-$}
+    \rput(5.5,2.2){
+        \psframe(-0.8,-0.4)(0.8,0.4)
+        \rput[c](0,0){$M-I$}}
+    \psline{->}(4.7,2.2)(4.2,2.2)(4.2,1.4)
+    \rput[c](3.9,2.0){$u_d$}
+
+    \psline{->}(7.0,1.2)(7.5,1.2)
+    \pscircle*(7.0,1.2){0.4mm}
+    \rput[c](7.2,2.0){$\check u$}
+    \rput(8.5,1.2){
+        \psframe(-1,-0.4)(1,0.4)
+        \rput[c](0,0){$G M$}}
+    \pscircle(10.0,0.0){0.2}
+    \psline{->}(9.5,1.2)(10.0,1.2)(10.0,0.2)
+    \rput[c](9.8,1.5){$y_d$}
+   % \rput[c](9.8,0.4){\tiny$-$}
+
+    \psline{->}(10.2,0.0)(11.0,0.0)
+    \rput[c](10.6,0.3){$y$}
+
+\end{pspicture}
+
+
+\end{document}

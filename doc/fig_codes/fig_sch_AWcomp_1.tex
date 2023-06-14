@@ -1,0 +1,88 @@
+\documentclass{standalone}
+
+\input{macros_block.tex}
+
+\input{../localmacros}
+%\usepackage[framed]{../mcode}
+%\newcommand{\var}[1]{{\fontfamily{pcr}\selectfont#1}}
+\usepackage{amssymb,amsmath}
+\usepackage{mathrsfs,arydshln}
+\usepackage{bera}
+
+%
+
+\begin{document}
+
+\newrgbcolor{backcolor}{0.75 0.75 0.75}
+
+
+\begin{pspicture}[showgrid=false](0.5,0.7)(10,-2.8)
+
+
+%    \psframe[fillstyle=solid,fillcolor=lightgray](7.5,-2.9)(3.0,-1.2)
+    \psline{->}(1.0,0.2)(2.0,0.2)
+    \rput[c](1.2,0.35){$r$}
+%    \pscircle(1.0,0.0){0.2}
+    \rput[c](1.4,-0.5){$y_{lin}$}
+%    \psline{->}(1.2,-0.0)(2.0,0.0)
+%    \rput[c](1.6,0.2){$e$}
+    \rput(2.5,0){
+        \psframe(-0.5,-0.4)(0.5,0.4)
+        \rput[c](0,0){$K$}}
+    \psline{->}(3.0,0.0)(3.8,0.0)
+    \rput[c](3.2,0.2){$u$}
+    \pscircle(4.0,0.0){0.2}
+    \rput[c](4.5,0.2){$\bar u$}
+    \rput[c](3.6,0.2){\tiny$+$}
+    \rput[c](3.8,-0.4){\tiny$-$}
+    \psline{->}(4.2,0.0)(5.5,0.0)
+    \rput(6.0,0){
+        \psframe(-0.5,-0.4)(0.5,0.4)
+        \psline(-0.4,-0.3)(-0.1,-0.3)(0.1,0.3)(0.4,0.3)}
+    \psline{->}(6.5,0.0)(7.5,0.0)
+    \rput[c](7.0,0.2){$\hat u$}
+    \rput(8.0,0){
+        \psframe(-0.5,-0.4)(0.5,0.4)
+        \rput[c](0,0){$G$}}
+    \psline{->}(8.5,0.0)(9.5,0.0)
+    \rput[c](9.3,0.2){$y$}
+%    \psline{->}(8.0,0.4)(8.0,1.0)(2.5,1.0)(2.5,0.4)
+%    \rput[c](8.2,0.8){$\p$}
+
+    \pscircle*(5.0,0.0){0.4mm}
+    \psline{->}(5.0,0.0)(5.0,-0.8)(5.8,-0.8)
+    \rput[c](5.6,-0.6){\tiny$+$}
+    \pscircle(6.0,-0.8){0.2}
+    \rput[c](6.4,-0.6){\tiny$-$}
+    \psline{->}(7.0,0.0)(7.0,-0.8)(6.2,-0.8)
+    \pscircle*(7.0,0.0){0.4mm}
+    \psline{->}(6.0,-1.0)(6.0,-1.6)(4.8,-1.6)
+    \rput(4.0,-1.6){
+        \psframe(-0.80,-0.4)(0.80,0.4)
+        \rput[c](0,0){$T_{aw}$}}
+    \psline{->}(4.0,-1.2)(4.0,-0.2)
+    \rput[c](4.3,-0.4){$u_d$}
+    \rput[c](6.2,-1.3){$\check u$}
+%    \psline{->}(6.0,-1.2)(6.0,-2.5)(4.55,-2.5)
+%    \rput(4.0,-2.5){
+%        \psframe(-0.55,-0.4)(0.55,0.4)
+%        \rput[c](0,0){$N(s)$}}
+    \rput[c](1.6,-1.3){$y_d$}
+    \psline{->}(3.2,-1.6)(1.2,-1.6)
+    \rput[c](1.3,-1.8){\tiny$+$}
+    \pscircle(1.0,-1.6){0.2}
+    \psline{->}(1.0,-1.4)(1.0,-0.2)(2.0,-0.2)
+%    \rput[c](0.8,-0.4){\tiny$-$}
+
+    \pscircle*(8.8,0.0){0.4mm}
+    \psline{->}(8.8,0.0)(8.8,-2.4)(1.0,-2.4)(1.0,-1.8)
+    \rput[c](0.8,-2.1){\tiny$+$}
+
+%    \psframe[linestyle=dashed,fillstyle=solid,fillcolor=backcolor](7.5,-3.3)(3.0,-0.7)
+%    \psframe[linestyle=dashed](7.5,-2.9)(3.0,-0.7)
+%    \rput[c](5.25,-2.6){\small AW Compensator}
+
+\end{pspicture}
+
+
+\end{document}

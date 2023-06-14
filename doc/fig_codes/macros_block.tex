@@ -1,0 +1,58 @@
+
+%\usepackage{kpfonts}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsbsy, amsfonts}
+\usepackage{pstricks-add,pst-plot,pst-eps,pst-circ}
+
+
+\colorlet{redlight}{red!50}
+\colorlet{bluelight}{blue!50}
+\colorlet{Lightgray}{gray!20}
+
+\psset{linewidth=0.2mm,linecolor=black, arrowsize=3pt 4}
+\psset{xunit=1cm,yunit=1cm,runit=1cm}
+
+
+\newcommand{\PI}{
+    \psframebox{\parbox[c][0.5cm][c]{0.5cm}{\centering PI}}}
+
+\newcommand{\bcksys}[5]{
+    \pnode(!\psGetNodeCenter{#1} #1.x #4 add #1.y #5 add){n0}
+    \fnode[framesize=0.8 0.7](n0){#2}\rput(n0){\centering#3}}
+    %\rput(n0){\rnode{#2}{\psframebox{\parbox[c][0.5cm][c]{0.6cm}{\centering#3}}}}}
+
+\newcommand{\bcksysI}[6]{
+    \pnode(!\psGetNodeCenter{#1} #1.x #4 add #1.y #5 add){n0}
+    \rput(n0){\rnode{#2}{\psframebox{\parbox[c][0.7cm][c]{#6}{\centering#3}}}}}
+
+\newcommand{\bcksum}[4]{
+    \pnode(!\psGetNodeCenter{#1} #1.x #3 add #1.y #4 add){n0}
+    \cnode(n0){0.2}{#2}}
+
+\newcommand{\bckmul}[4]{
+    \pnode(!\psGetNodeCenter{#1} #1.x #3 add #1.y #4 add){n0}
+    \cnode(n0){0.2}{#2}
+    \rput(n0){$\times$}}
+
+\newcommand{\satsig}[4]{
+    \pnode(!\psGetNodeCenter{#1} #1.x #3 add  0.0 add #1.y #4 add  0.0 add){n0}
+    \pnode(!\psGetNodeCenter{#1} #1.x #3 add -0.3 add #1.y #4 add -0.3 add){n1}
+    \pnode(!\psGetNodeCenter{#1} #1.x #3 add -0.1 add #1.y #4 add -0.3 add){n2}
+    \pnode(!\psGetNodeCenter{#1} #1.x #3 add  0.1 add #1.y #4 add  0.3 add){n3}
+    \pnode(!\psGetNodeCenter{#1} #1.x #3 add  0.3 add #1.y #4 add  0.3 add){n4}
+    \pnode(!\psGetNodeCenter{#1} #1.x #3 add  0.4 add #1.y #4 add  0.4 add){n5}
+    \pnode(!\psGetNodeCenter{#1} #1.x #3 add -0.4 add #1.y #4 add -0.4 add){n6}
+    \psline(n1)(n2)(n3)(n4)
+    \fnode[framesize=0.8 0.7](n0){#2}}
+    %\rput(n0){\rnode{#2}{\psframebox{\parbox[c][0.5cm][c]{0.5cm}{\hspace{0.8cm}}}}}}
+
+
+\newcommand{\pnodeRel}[4]{
+    \pnode(!\psGetNodeCenter{#1} #1.x #3 add #1.y #4 add){#2}}
+
+\newcommand{\legend}[4]{
+    \pnode(!\psGetNodeCenter{#1} #1.x 0.3 add #1.y #4 sub){l1}
+    \pnode(!\psGetNodeCenter{#1} #1.x 0.5 add #1.y #4 sub){l2}
+    \psline[linecolor=#2,linewidth=0.5mm](l1)(l2)
+    \uput[0](l2){#3}}
+
